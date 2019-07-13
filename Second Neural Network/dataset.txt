@@ -1,0 +1,54 @@
+Made by Ragib Ahashan	
+Studying Software Engineering at École Polytechnique de Montréal, Canada.	
+
+This *imaginary dataset* has the records of 1000 children between the age of 0 and 5. 
+
+We have recorded the reactions of children when given 6 items. We would to use a learning 
+algorithm to predict if the child will be happy if we give him/her a set of items.
+
+
+Inputs neurons:																										Output:
+Gender		Age_between_0_3		Action figures		Playing_cards		Bicycle			Cookies		vegetable		Happy?
+M			1					1					1					1				1			0				1
+
+
+
+
+
+{
+Action figures		Playing_cards		Bicycle			Cookies			vegetable		Boys happy	Boys unhappy
+[
+[0,					0,					0,				0,				0,				[15,		85]],
+[0,					0,					0,				0,				1,				[08,		92]],
+[0,					0,					0,				1,				0,				[25,		75]],
+[0,					0,					0,				1,				1,				[16,		84]],
+[0,					0,					1,				0,				0,				[30,		70]],
+[0,					0,					1,				0,				1,				[20,		80]],
+[0,					0,					1,				1,				0,				[40,		60]],
+[0,					0,					1,				1,				1,				[38,		62]],
+[0,					1,					0,				0,				0,				[50,		50]],
+[0,					1,					0,				0,				1,				[40,		60]],
+[0,					1,					0,				1,				0,				[59,		41]],
+[0,					1,					0,				1,				1,				[50,		50]],
+[0,					1,					1,				0,				0,				[45,		55]],
+[0,					1,					1,				0,				1,				[38,		62]],
+[0,					1,					1,				1,				0,				[70,		30]],
+[0,					1,					1,				1,				1,				[65,		35]],
+[1,					0,					0,				0,				0,				[40,		60]],
+[1,					0,					0,				0,				1,				[35,		65]],
+[1,					0,					0,				1,				0,				[50,		50]],
+[1,					0,					0,				1,				1,				[45,		55]],
+[1,					0,					1,				0,				0,				[57,		43]],
+[1,					0,					1,				0,				1,				[50,		50]],
+[1,					0,					1,				1,				0,				[70,		30]],
+[1,					0,					1,				1,				1,				[65,		35]],
+[1,					1,					0,				0,				0,				[40,		60]],
+[1,					1,					0,				0,				1,				[35,		65]],
+[1,					1,					0,				1,				0,				[50,		50]],
+[1,					1,					0,				1,				1,				[45,		55]],
+[1,					1,					1,				0,				0,				[80,		20]],
+[1,					1,					1,				0,				1,				[75,		25]],
+[1,					1,					1,				1,				0,				[90,		10]],
+[1,					1,					1,				1,				1,				[85,		15]]
+]
+}
