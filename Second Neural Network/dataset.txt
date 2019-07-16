@@ -15,8 +15,11 @@ M			1					1					1					1				1			0				1
 
 
 
-{
+
+
+Inputs neurons:																			Output:
 Action figures		Playing_cards		Bicycle			Cookies			vegetable		Boys happy	Boys unhappy
+
 [
 [0,					0,					0,				0,				0,				[15,		85]],
 [0,					0,					0,				0,				1,				[08,		92]],
@@ -51,4 +54,6 @@ Action figures		Playing_cards		Bicycle			Cookies			vegetable		Boys happy	Boys un
 [1,					1,					1,				1,				0,				[90,		10]],
 [1,					1,					1,				1,				1,				[85,		15]]
 ]
-}
+
+
+

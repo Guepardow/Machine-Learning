@@ -90,7 +90,6 @@ for i in range(len(training_data_set)):
 	desired_outputs[i] = training_data_set[5]
 
 
-print(len(inputs) == len(desired_outputs))
 
 
 
