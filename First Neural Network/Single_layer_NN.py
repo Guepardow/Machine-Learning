@@ -37,7 +37,7 @@ print("Generating random Weights: ", W)
 T = [[0,0],[1,1]]
 
 input = 1
-output = 1
+output = 0
 
 def forwardPropagation():
 	a = sigmoid(input*W[0] + B[0])
