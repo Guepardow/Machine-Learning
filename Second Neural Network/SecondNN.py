@@ -10,39 +10,39 @@ import math
 
 
 dataset_unfiltered = np.array([
-								[0,		0,		0,		0,		0,		0,		1],
-								[0,		0,		0,		0,		1,		0,		1],
-								[0,		0,		0,		1,		0,		0,		1],
-								[0,		0,		0,		1,		1,		0,		1],
-								[0,		0,		1,		0,		0,		0,		1],
-								[0,		0,		1,		0,		1,		0,		1],
-								[0,		0,		1,		1,		0,		0,		1],
-								[0,		0,		1,		1,		1,		0,		1],
-								[0,		1,		0,		0,		0,		1,		0],
-								[0,		1,		0,		0,		1,		0,		1],
-								[0,		1,		0,		1,		0,		1,		0],
-								[0,		1,		0,		1,		1,		1,		0],
-								[0,		1,		1,		0,		0,		0,		1],
-								[0,		1,		1,		0,		1,		0,		1],
-								[0,		1,		1,		1,		0,		1,		0],
-								[0,		1,		1,		1,		1,		1,		0],
-								[1,		0,		0,		0,		0,		0,		1],
-								[1,		0,		0,		0,		1,		0,		1],
-								[1,		0,		0,		1,		0,		1,		0],
-								[1,		0,		0,		1,		1,		0,		1],
-								[1,		0,		1,		0,		0,		1,		0],
-								[1,		0,		1,		0,		1,		1,		0],
-								[1,		0,		1,		1,		0,		1,		0],
-								[1,		0,		1,		1,		1,		1,		0],
-								[1,		1,		0,		0,		0,		0,		1],
-								[1,		1,		0,		0,		1,		0,		1],
-								[1,		1,		0,		1,		0,		1,		0],
-								[1,		1,		0,		1,		1,		0,		1],
-								[1,		1,		1,		0,		0,		1,		0],
-								[1,		1,		1,		0,		1,		1,		0],
-								[1,		1,		1,		1,		0,		1,		0],
-								[1,		1,		1,		1,		1,		1,		0]
-								])
+	[0,		0,		0,		0,		0,		0,		1],
+	[0,		0,		0,		0,		1,		0,		1],
+	[0,		0,		0,		1,		0,		0,		1],
+	[0,		0,		0,		1,		1,		0,		1],
+	[0,		0,		1,		0,		0,		0,		1],
+	[0,		0,		1,		0,		1,		0,		1],
+	[0,		0,		1,		1,		0,		0,		1],
+	[0,		0,		1,		1,		1,		0,		1],
+	[0,		1,		0,		0,		0,		1,		0],
+	[0,		1,		0,		0,		1,		0,		1],
+	[0,		1,		0,		1,		0,		1,		0],
+	[0,		1,		0,		1,		1,		1,		0],
+	[0,		1,		1,		0,		0,		0,		1],
+	[0,		1,		1,		0,		1,		0,		1],
+	[0,		1,		1,		1,		0,		1,		0],
+	[0,		1,		1,		1,		1,		1,		0],
+	[1,		0,		0,		0,		0,		0,		1],
+	[1,		0,		0,		0,		1,		0,		1],
+	[1,		0,		0,		1,		0,		1,		0],
+	[1,		0,		0,		1,		1,		0,		1],
+	[1,		0,		1,		0,		0,		1,		0],
+	[1,		0,		1,		0,		1,		1,		0],
+	[1,		0,		1,		1,		0,		1,		0],
+	[1,		0,		1,		1,		1,		1,		0],
+	[1,		1,		0,		0,		0,		0,		1],
+	[1,		1,		0,		0,		1,		0,		1],
+	[1,		1,		0,		1,		0,		1,		0],
+	[1,		1,		0,		1,		1,		0,		1],
+	[1,		1,		1,		0,		0,		1,		0],
+	[1,		1,		1,		0,		1,		1,		0],
+	[1,		1,		1,		1,		0,		1,		0],
+	[1,		1,		1,		1,		1,		1,		0]
+	])
 
 
 def generateRandom2DMatrix(m, n):
@@ -316,7 +316,7 @@ def gradient_descend(iterations = 10000, alpha = 0.01, dW_matrix = derivatives_C
 	j = 0
 	#while((prev_cost >= current_cost) or j <= 10000):
 		#prev_cost = current_cost
-	for i in range(500):
+	for i in range(5000):
 		for layer in range(len(dW_matrix)):
 			for m in range(len(dW_matrix[layer][:,0])):
 				for n in range(len(dW_matrix[layer][0,:])):
@@ -332,18 +332,35 @@ def gradient_descend(iterations = 10000, alpha = 0.01, dW_matrix = derivatives_C
 gradient_descend()
 print(Weights)
 
-mat, w = forwardPropagation(i, False, False, neurons, Weights)
+NN_all_training_outputs = [ [] for x in range(len(training_data_set))]
+print(len(NN_all_training_outputs))
+print((NN_all_training_outputs))
+mat, w = forwardPropagation(i, True, False, neurons, Weights)
 
-
-for i in range(len(desired_outputs_testing)):
-	print(inputs_testing[i])
-	mat, w = forwardPropagation(i, False, False, mat, Weights)
-	print("Network output: ", mat[3][1], "   Desired output: ", desired_outputs_testing[i], "   ", CostFunction(mat[3][1], desired_outputs_testing[i]))
-
-
-
+#NN_outputs = [ [] for i in range(len(training_data_set))]
+#NN_outputs = np.array(NN_outputs)
 
 for i in range(len(training_data_set)):
-	print(inputs[i])
+	#print(inputs[i])
 	mat, w = forwardPropagation(i, True, False, mat, Weights)
-	print("Network output: ", mat[3][1], "   Desired output: ", desired_outputs[i], "   ", CostFunction(mat[3][1], desired_outputs[i]))
+	#NN_outputs[i][0] = desired_outputs[i]
+	#NN_outputs[i][1] = mat[3][1]
+	#print("Network output: ", mat[3][1], "   Desired output: ", desired_outputs[i], "   ", CostFunction(mat[3][1], desired_outputs[i]))
+
+#print(NN_outputs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
